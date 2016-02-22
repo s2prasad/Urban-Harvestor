@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link type="text/css" rel="stylesheet" href="/static/css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="/static/css/offcanvas.css">
+	<link type="text/css" rel="stylesheet" href="/static/css/bootstrap-lightbox.css">
+	<link type="text/css" rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css">
+        <style type="text/css">
+      .label {text-align: right}
+      .error {color: red}
+    </style>
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top ">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">UrbanHarvester.org</a>
+				<div class="container">
+					<a href="/login" class="navbar-btn btn-warning btn pull-right" >LogIn</a>
+					<a href="/signup" class="navbar-btn btn-info btn pull-right" style="margin-right: 10px;">Register</a>
+				</div>
+				<button class="navbar-toggle" data-toggle ="collapse" data-target = ".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="container" style="background-color: white;">
+		<div class="navbar-header">
+			<img src="/static/img/urban.png" width="100%" height="300px">
+		</div>
+		
+	</div>
+		<div class="container" style="background-color: #242b38;">
+			<div class="collapse navbar-collapse navHeaderCollapse" >
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="index.html">Our Mission</a></li>
+					<li><a href="contact.html">Help Us Grow</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Contact Urban Harvester</a></li>
+							<li><a href="#">Higlights</a></li>
+							<li><a href="#">Partner Agency</a></li>
+						</ul>
+					</li> 
+					<li><a href="feature.html">Donate/Receive Food</a></li>
+					<li><a href="about.html">Photos</a></li>
+					<li><a href="#contact" data-toggle="modal">Media</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="container">
+				<form class="well span6" method="POST">
+					<label>UserName</label><br>
+					<input type="text" name="username" class="span3" placeholder="Enter your username..."><br>
+					<label>Password</label><br>
+					<input type="password" name="password" class="span3" placeholder="Enter your password..."><br>
+					 <p class="error" > {{login_error}}</p>
+                                        <button class="btn btn-primary" type="submit">Submit</button>
+					<button class="btn">Clear</button>
+				</form>
+			</div>
+		</div>
+	<div class="navbar navbar-default navbar-fixed-bottom" style="background-color: #242b38; padding: 20px;">
+		<div class="container">
+			<div class="col-md-6">
+				<a href="http://www.facebook.com/pages/Urban-Harvester/146450618757212?cropsuccess&amp;success=1">Click here to go Urban Harvester Facebook page.</a>
+				<p>Help us spread the world</p>
+				Please "Like" the<a href="http://www.facebook.com/pages/Urban-Harvester/146450618757212?cropsuccess&amp;success=1"> Urban Harvester Facebook page</a> below:
+			</div>
+			<div class="col-md-6 pull-right">
+				<p>Click Here to Join Our Mailing List</p>
+				<p>To contact Urban Harvester, email Info@UrbanHarvester.org</p>
+			</div>
+		</div>
+	</div>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js" ></script>
+<script src="/static/js/bootstrap.js"></script>
+<script src="/static/js/offcanvas.js"></script>
+<script src="/static/js/popover.js"></script>
+<script src="/static/js/tooltip.js"></script>
+<script src="/static/js/bootstrap-lightbox.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+.contenthover { 
+	padding:20px 20px 10px 20px; 
+}
+.contenthover, .contenthover h3, contenthover a { 
+	color:#fff; 
+}
+.contenthover h3, .contenthover p { 
+	margin:0 0 10px 0; 
+	line-height:1.4em; 	
+	padding:0; 
+}
+.contenthover a.mybutton { 
+	display:block; 
+	float:left; 
+	padding:5px 10px; 
+	background:#3c9632; 
+	color:#fff; 
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px; 
+	border-radius: 4px; 
+}
+.contenthover a.mybutton:hover { 
+	background:#34742d 
+}
+.mybackground { 
+	background:url(slide4.png); 
+}
+ .span3{
+     margin-right: 20px;
+ }
+ .nav-pills > li > a {margin-top: 50px;
+ margin-bottom: 30px;}
+ 
+.col-md-12{ margin:30px;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+    background-color: #0088cc;
+}

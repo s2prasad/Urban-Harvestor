@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UrbanHarvester</title>
+	<style type="text/css">
+            #menu ul li a{
+                color: #afbbcd;
+            }
+            #menu ul li a:hover{
+
+                color: #fff;
+                background: #5e93bd;
+            }
+	    .error {color: red}
+		
+	     
+        </style>
+	 <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+	 
+        <link type="text/css" rel="stylesheet" href="/static/css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/bootstrap-timepicker.min.css">
+	<link type="text/css" rel="stylesheet" href="/static/css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="/static/css/offcanvas.css">
+	<!-- <link type="text/css" rel="stylesheet" href="css/bootstrap-lightbox.css"> -->
+	<link type="text/css" rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css">
+	<link href="/static/css/bootstrap-timepicker.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top ">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">UrbanHravester.org</a>
+				<div class="container">
+					<a href="/login" class="navbar-btn btn-warning btn pull-right" >LogIn</a>
+					<a href="/signup" class="navbar-btn btn-info btn pull-right"style="margin-right: 10px;">Register</a>
+			</div>
+				<button class="navbar-toggle" data-toggle ="collapse" data-target = ".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="container" style="background-color: white;">
+		<div class="navbar-header">
+			<img src="/static/img/urban.png" width="100%" height="300px">
+		</div>
+		
+	</div>
+		<div class="container" style="background-color: #242b38;">
+			<div class="collapse navbar-collapse navHeaderCollapse" id="menu" >
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="index.html">Our Mission</a></li>
+					<li><a href="contact.html">Help Us Grow</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact<span class="caret" style="color: #afbbcd;"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Contact Urban Harvester</a></li>
+							<li><a href="#">Higjlights</a></li>
+							<li><a href="#">Partner Agency</a></li>
+						</ul>
+					</li> 
+					<li><a href="feature.html">Donate/Recieve Food</a></li>
+					<li><a href="about.html">Photos</a></li>
+					<li><a href="#contact" data-toggle="modal">Media</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Donate FOOD</h2> <hr />
+						<div class="bfh-timepicker">
+</div>
+									<form method="POST" id = "donate">
+							<div class="form-group date">
+					<label for="text" class="col-sm-2 control-label">Enter date of donation:</label>
+                            <div class="col-sm-4" id="pickdate">
+                                <input type="text" id="datepick" name="donationdate" class="form-control" style="padding: 15px;" placeholder="YYYY-MM-DD" >
+                              
+                            </div><br><br>
+					</div>
+					 
+					<div class="form-group">
+						<label for="name" class="col-sm-2 control-label">Donate Time:</label>
+						<div class="col-sm-4">
+							<div class="input-group bootstrap-timepicker timepicker">
+                    			<input id="timepicker1" name="time" type="text" style="padding: 15px;" class="form-control input-small">
+                    			<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                			</div>
+						</div>
+					</div><br><br><br>
+				
+						<label for="gender" class="col-sm-2 control-label">Food types for donation</label>
+
+						</label>
+											<div class="col-sm-6">
+						<label  class="checkbox-inline">
+							<input  type="checkbox" name="Precooked" value="Precooked"> Precooked(To be heated)<br>
+						<input type="checkbox" name="Perishable" value="Perishable"> Perishable grocery<br>
+					<input type="checkbox" name="Dry" value="Dry"> Dry grocery<br>
+					</label>
+					</div><br><br><br><br>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-6">
+							<button type="submit" name = "donate" class="btn btn-primary">Donate</button>
+						
+						</div>
+					</div>
+					</form>
+				
+					  
+    
+					 <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>         
+          <th>Address</th>
+          <th>Number</th>
+          <th>distance</th>
+          
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+    {% for result in results %}
+      <tr>
+    <td>{{result.obj.companyName}}</td>
+      <td>{{result.obj.address.street}},{{result.obj.address.city}}</td>
+          <td>{{result.obj.phoneNumber}}</td>
+                <td>{{Math.round(result.dis)}} miles</td>
+        </tr>
+     {% endfor%}
+     
+      </tbody>
+    </table>
+   
+						<br><br><br><br>
+				</div>
+			</div>
+		</div>
+	<div class="navbar navbar-default navbar-static-bottom" style="background-color: #242b38; padding: 20px; margin-bottom: 0px;">
+		<div class="container">
+			<div class="col-md-6">
+				<a href="http://www.facebook.com/pages/Urban-Harvester/146450618757212?cropsuccess&amp;success=1">Click here to go Urban Harvester Facebook page.</a>
+				<p>Help us spread the world</p>
+				Please "Like" the<a href="http://www.facebook.com/pages/Urban-Harvester/146450618757212?cropsuccess&amp;success=1"> Urban Harvester Facebook page</a> below:
+			</div>
+			<div class="col-md-6 pull-right">
+				<p>Click Here to Join Our Mailing List</p>
+				<p>To contact Urban Harvester, email Info@UrbanHarvester.org</p>
+			</div>
+		</div>
+	</div>
+	 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.js"></script>
+<script src="/static/js/urban.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/bootstrap-timepicker.js"></script>
+   <script src="/static/js/bootstrap-datepicker.js"></script>
+
+
+
+       <script>
+  $('#timepicker1').timepicker();
+   $('#datepick').datepicker({
+     "setDate": new Date(),
+                    format: "dd/mm/yyyy"
+                }); 
+</script>
+</body>
+</html>

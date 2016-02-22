@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <style type="text/css">
+            #menu ul li a{
+                color: #afbbcd;
+            }
+            #menu ul li a:hover{
+
+                color: #fff;
+                background: #5e93bd;
+            }
+	    .error {color: red}
+		
+	     
+        </style>
+
+        <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/bootstrap.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/offcanvas.css">
+        <link href="/static/css/bootstrap-timepicker.min.css" rel="stylesheet">	
+        <link type="text/css" rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css">
+
+
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top ">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">UrbanHarvester.org</a>
+                    <div class="container">
+                        <a href="/login" class="navbar-btn btn-warning btn pull-right" >LogIn</a>
+                        <a href="/signup" class="navbar-btn btn-info btn pull-right" style="margin-right: 10px;">Register</a>
+                    </div>
+                    <button class="navbar-toggle" data-toggle ="collapse" data-target = ".navHeaderCollapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="background-color: white;">
+            <div class="navbar-header">
+                <img src="/static/img/urban.png" width="100%" height="300px">
+            </div>
+        </div>
+        <div class="container" style="background-color: #242b38;">
+            <div class="collapse navbar-collapse navHeaderCollapse" id="menu" >
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="index.html">Our Mission</a></li>
+                    <li><a href="contact.html">Help Us Grow</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact<span class="caret" style="color: #afbbcd;"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Contact Urban Harvester</a></li>
+                            <li><a href="#">Highlights</a></li>
+                            <li><a href="#">Partner Agency</a></li>
+                        </ul>
+                    </li> 
+                    <li><a href="feature.html">Donate/Receive Food</a></li>
+                    <li><a href="about.html">Photos</a></li>
+                    <li><a href="#contact" data-toggle="modal">Media</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" style="margin-bottom: 100px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Register Form</h2> <hr />
+                    <form class="form-horizontal" method ="POST">
+                        <h5>*1. Please enter your company information</h5>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Administrative User Id:</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="username" class="form-control" style="padding: 15px;" value = "{{username}}"placeholder="type your name here.." >
+                            	<span class ="error"> {{username_error}}</span> 
+			</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="text" class="col-sm-2 control-label">Company Name:</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="company_name" class="form-control" value="{{companyName}}" style="padding: 15px;" placeholder="type your Company Name here.." >
+				<span class ="error"> {{companyName_error}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="text" class="col-sm-2 control-label">Address:</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="address" class="form-control" value="{{address}}" style="padding: 15px;" placeholder="type your Address here.." >
+                                <span class ="error"> {{address_error}}</span>
+			     </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="text" class="col-sm-2 control-label">City/Town:</label>
+                            <div class="col-sm-2">
+                                <input type="text" name="city" class="form-control" value="{{city}}" style="padding: 15px;" placeholder="type your City here.." >
+                            	<span class ="error"> {{city_error}}</span>
+			    </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="city" class="col-sm-2 control-label">State:</label>
+                            <div class="col-sm-6">
+                                <select class="form-control" name="state" id="state">
+                                    <option value="{{state}}">-- select state --</option>
+                                    <option value="AL">AL Alabama</option>
+                                    <option value="AK">AK Alaska</option><option value="AS">AS American Samoa</option><option value="AZ">AZ Arizona</option><option value="AR">AR Arkansas</option><option value="CA">CA California</option><option value="CO">CO Colorado</option><option value="CT">CT Connecticut</option><option value="DE">DE Delaware</option><option value="DC">DC District of Columbia</option><option value="FM">FM Federated States of Micronesia</option><option value="FL">FL Florida</option><option value="GA">GA Georgia</option><option value="GU">GU Guam</option><option value="HI">HI Hawaii</option><option value="ID">ID Idaho</option><option value="IL">IL Illinois</option><option value="IN">IN Indiana</option><option value="IA">IA Iowa</option><option value="KS">KS Kansas</option><option value="KY">KY Kentucky</option><option value="LA">LA Louisiana</option><option value="ME">ME Maine</option><option value="MH">MH Marshall Islands</option><option value="MD">MD Maryland</option><option value="MA">MA Massachusetts</option><option value="MI">MI Michigan</option><option value="MN">MN Minnesota</option><option value="MS">MS Mississippi</option><option value="MO">MO Missouri</option><option value="MT">MT Montana</option><option value="NE">NE Nebraska</option><option value="NV">NV Nevada</option><option value="NH">NH New Hampshire</option><option value="NJ">NJ New Jersey</option><option value="NM">NM New Mexico</option><option value="NY">NY New York</option><option value="NC">NC North Carolina</option><option value="ND">ND North Dakota</option><option value="MP">MP Northern Mariana Islands</option><option value="OH">OH Ohio</option><option value="OK">OK Oklahoma</option><option value="OR">OR Oregon</option><option value="PW">PW Palau</option><option value="PA">PA Pennsylvania</option><option value="PR">PR Puerto Rico</option><option value="RI">RI Rhode Island</option><option value="SC">SC South Carolina</option><option value="SD">SD South Dakota</option><option value="TN">TN Tennessee</option><option value="TX">TX Texas</option><option value="UT">UT Utah</option><option value="VT">VT Vermont</option><option value="VI">VI Virgin Islands</option><option value="VA">VA Virginia</option><option value="WA">WA Washington</option><option value="WV">WV West Virginia</option><option value="WI">WI Wisconsin</option><option value="WY">WY Wyoming</option>
+                                </select>
+				<span class ="error"> {{state_error}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="text" class="col-sm-2 control-label">Zipcode:</label>
+                            <div class="col-sm-2">
+                                <input type="text" name="zipcode" class="form-control" value="{{zipcode}}" style="padding: 15px;" placeholder="type your Zip code here.." >
+                            	<span class ="error"> {{zipcode_error}}</span>
+			     </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Email Address:</label>
+                            <div class="col-sm-4">
+                                <input type="email" name="email" class="form-control" value="{{email}}" style="padding: 15px;" placeholder="type your email here.." >
+                            	<span class ="error"> {{email_error}}</span>
+			    </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-2 control-label">Password:</label>
+                            <div class="col-sm-4">
+                                <input type="password" name="password" class="form-control" value="{{password}}" style="padding: 15px;" placeholder="type your password here.." >
+                            	<span class ="error"> {{password_error}}</span>
+			     </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-2 control-label">Confirm-password</label>
+                            <div class="col-sm-4">
+                                <input type="password" name="verify" class="form-control" style="padding: 15px;" value="{{verify}}" placeholder="Re-enter your password here.." >
+                           	<span class ="error"> {{verify_error}}</span>
+			    </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="text" class="col-sm-2 control-label">Phone Number:</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="phone_number" class="form-control" style="padding: 15px;" value="{{phoneNumber}}"placeholder="type your phone number here example(111-1111-1111)..." >
+                            	<span class ="error"> {{phoneNumber_error}}</span>
+			     </div>
+                        </div>
+                        <div class="form-group">
+                            <h5>2. What is your company's email Id?</h5>
+                            <div class="col-sm-4">
+                                <input type="text" name="company_website" class="form-control" style="padding: 15px;" value="{{company_website_address}}"placeholder="type your Website url here.." >
+                                <span class ="error"> {{company_website_address_error}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h5>*3. Who is your daily food recovery contact?</h5>
+                            <label for="text" class="col-sm-2 control-label">Daily Contact Name:</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="daily_contact_name" class="form-control" style="padding: 15px;" value="{{daily_contactName}}"placeholder="type your contact name here.." >
+                                 <span class ="error"> {{daily_contactName_error}}</span>
+                            </div><br><br>
+                            <label for="email" class="col-sm-2 control-label">Email Address:</label>
+                            <div class="col-sm-4">
+                                <input type="email" name="daily_email" class="form-control" style="padding: 15px;" value="{{daily_email_address}}" placeholder="type your email here..">
+                                <span class ="error"> {{daily_email_address_error}}</span>
+       
+                            </div><br><br>
+                            <label for="text" class="col-sm-2 control-label">Cell/Phone Number:</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="daily_phone_number" class="form-control" style="padding: 15px;" value="{{daily_phoneNumber}}" placeholder="type your phone number here.." >
+                                <span class ="error"> {{daily_phoneNumber_error}} </span>
+                            </div>
+                        </div>
+           
+                        <div class="form-group">
+                            <h5>*4. In food recovery, my company is:</h5>
+                            <div class="col-sm-6">
+                                <label class="radio-inline">
+                                    <input type="radio" class="donor" name="foodRecovery_type" id="4" value="Donor" > Food Donor
+                                </label><br><br>
+                                <label class="radio-inline">
+                                    <input type="radio" class="donor" name="foodRecovery_type" id="5" value="Receiver"> Food Receiver & Distributor
+                                </label><br><br>
+                                <label class="radio-inline">
+                                    <input type="radio" class="donor" name="foodRecovery_type" id="6" value="Transporter"> Can Transport Food Only
+                                </label>
+                            </div>
+                        </div>
+
+
+                          <!--  DONOR -->
+                        <div class="form-group donor1" id="1">
+                            <div class="container">
+                                <h4>How many shopping carts of recovered food do you generate per day?</h4>
+                                <label for="text" class="col-sm-2 control-label">Shopping carts per day</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" name="donor_shopping_cart" style="padding: 15px;" placeholder="enter value here..">
+                                    <span class ="error"> {{donor_shoppingcart_error}} </span>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="form-group">
+                                    <label for="website" class="col-sm-2 control-label">What days of the week can you deliver food donations?</label>
+                                    <div class="col-sm-6">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="days_of_week" value="1"> Mon
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="days_of_week" value="2"> Tue
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="days_of_week" value="3"> Wed
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="days_of_week" value="4"> Thu
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="days_of_week" value="5"> Fri
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="days_of_week" value="6"> Sat
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="days_of_week" value="0"> Sun
+                                        </label>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h4>What time would you like to pickup?</h4>
+                                <label for="name" class="col-sm-2 control-label">Pickup Time:</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group bootstrap-timepicker">
+                                        <input id="timepicker1" type="text" name="pickup_time" class="input-small" >
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                         
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="form-group">
+                                    <label for="gender" class="col-sm-2 control-label">Does any of your food donation require refrigeration?</label>
+                                    <div class="col-sm-6">
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="refrigeration"  value="Yes"> Yes
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="refrigeration"  value="No"> No
+                                        </label>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="form-group">
+                                    <label for="gender" class="col-sm-2 control-label">Does any of your food donation require freezers</label>
+                                    <div class="col-sm-6">
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="freezer"  value="Yes"> Yes
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="freezer"  value="No"> No
+                                        </label>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="form-group">
+                                    <label for="gender" class="col-sm-2 control-label">Is your company willing to deliver the food locally?</label>
+                                    <div class="col-sm-6">
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="deliver_local" value="Yes" > Yes
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="deliver_local"  value="No"> No
+                                        </label>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- RECEIVER -->
+                        <div class="form-group r1" id="2">
+                            <div class="container">
+                                <h4>How many shopping carts of recovered food do you require per day?</h4>
+
+                                <label for="text" class="col-sm-2 control-label">Hot meals: </label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" style="padding: 15px;" name="hot_meals" placeholder="enter value here.." >
+                                    <span class ="error"> {{receiver_hot_meals_error}} </span>
+                                </div><br><br>
+                                <label for="text" class="col-sm-2 control-label">Sack meals: </label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" style="padding: 15px;" name="sack_meals" placeholder="enter value here..">
+                                    <span class ="error"> {{receiver_sack_meals_error}} </span>
+                                </div><br><br>
+                                <label for="text" class="col-sm-2 control-label">Bags of groceries with perishables: </label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" style="padding: 15px;" name="bags_perishables" placeholder="enter value here..">
+                                    <span class ="error"> {{receiver_bags_perishables_error}} </span>
+                                </div><br><br><br>
+                                <label for="text" class="col-sm-2 control-label">Bags of groceries with dry goods only: </label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" style="padding: 15px;" name="bags_dryGoods" placeholder="enter value here..">
+                                    <span class ="error"> {{receiver_bags_dryGoods_error}} </span>
+                                </div>
+                            </div>
+                             <div class="container">
+                                <div class="form-group">
+                                    <label for="gender" class="col-sm-2 control-label">Can you accept non-perishable grocery - Dry</label>
+                                    <div class="col-sm-6">
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="drygrocery"  value="Yes"> Yes
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="drygrocery"  value="No"> No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="container">
+                                <div class="form-group">
+                                    <label for="gender" class="col-sm-2 control-label">Can you accept perishable Grocery</label>
+                                    <div class="col-sm-6">
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="perishablegrocery"  value="Yes"> Yes
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="perishablegrocery"  value="No"> No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="form-group">
+                                    <label for="gender" class="col-sm-2 control-label">Can you accept perishable trays of prepared food from commercial kitchens that require re-heating?</label>
+                                    <div class="col-sm-6">
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="reheating"  value="Yes"> Yes
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="reheating"  value="No"> No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <h4>What is the maximum number of shopping carts full of food you can accept per day?</h4>
+
+                                <label for="text" class="col-sm-2 control-label">Shopping carts per day:  </label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" style="padding: 15px;" name="receiver_shopping_carts" placeholder="enter value here..">
+                                    <span class ="error"> {{receiver_shopping_cart_error}} </span>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="form-group">
+                                    <label for="website" class="col-sm-2 control-label">What days of the week can you deliver food donations?</label>
+                                    <div class="col-sm-6">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="receiver_days_of_week" value="1"> Mon
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="receiver_days_of_week" value="2"> Tue
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="receiver_days_of_week" value="3"> Wed
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="receiver_days_of_week" value="4"> Thu
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="receiver_days_of_week" value="5"> Fri
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="receiver_days_of_week" value="6"> Sat
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="receiver_days_of_week" value="0"> Sun
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h4>How early can you begin receiving food donations?</h4>
+                                <label for="name" class="col-sm-2 control-label">Earliest Receiving Time:</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group bootstrap-timepicker">
+                                        <input id="timepicker2" type="text" class="input-small" name="receiver_earliest_pickUpTime">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h4>How late can you accept delivery of food donations?</h4>
+                                <label for="name" class="col-sm-2 control-label">Latest Delivery Time:</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group bootstrap-timepicker">
+                                        <input id="timepicker3" type="text" class="input-small" name="receiver_latest_pickUpTime" >
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="form-group">
+                                    <label for="gender" class="col-sm-2 control-label">Do you have refrigerators?</label>
+                                    <div class="col-sm-6">
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="receiver_refrigerator"  value="Yes"> Yes
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="receiver_refrigerator"  value="No"> No
+                                        </label>
+                                    </div><br><br><br>
+                                    <label for="gender" class="col-sm-2 control-label">Do you have freezers?</label>
+                                    <div class="col-sm-6">
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="receiver_freezer"  value="Yes"> Yes
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="receiver_freezer"  value="No"> No
+                                        </label>
+                                    </div><br><br><br>
+                                    <label for="gender" class="col-sm-2 control-label">Is your agency willing to pick up the food locally?</label>
+                                    <div class="col-sm-6">
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="receiver_pickUp_locally"  value="Yes"> Yes
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" class="donor" name="receiver_pickUp_locally"  value="No"> No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="form-group">
+                                    <label for="messsage" class="col-sm-2 control-label">Are there any special delivery instructions about food coming to your facility?</label>
+                                    <div class="col-sm-6">
+                                        <textarea class="form-control" rows="3" name="receiver_specialRequest_message" placeholder="Enter your message here...."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                          <!-- TRANSPORTER -->
+
+                        <div class="form-group" id="3">
+                            <h4>What is the maximum number of shopping carts full of food you can deliver per day?</h4>
+                            <label for="text" class="col-sm-2 control-label">Shopping carts full: </label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" style="padding: 15px;" placeholder="enter the value here..">
+                            </div><br><br>
+                            <div class="container">
+                                <div class="form-group">
+                                    <label for="website" class="col-sm-2 control-label">What days of the week can you deliver food donations?</label>
+                                    <div class="col-sm-6">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="option1"> Mon
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="option2"> Tue
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="option3"> Wed
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="option3"> Thu
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="option3"> Fri
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="option3"> Sat
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="option3"> Sun
+                                        </label>
+                                    </div><br><br><br><br><br>
+                                    <div class="form-group">
+                                        <h4>How early can you begin picking up food donations?</h4>
+                                        <label for="name" class="col-sm-2 control-label">Earliest Pickup Time:</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group bootstrap-timepicker">
+                                                <input id="timepicker4" type="text" class="input-small">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <h4>How late can you deliver food donations?</h4>
+                                        <label for="name" class="col-sm-2 control-label">Last delivery time:</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group bootstrap-timepicker">
+                                                <input id="timepicker5" type="text" class="input-small">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label for="website" class="col-sm-2 control-label">Are your drivers volunteer or staff?</label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="option3"> Volunteer
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="option3"> Staff
+                                    </label><br><br><br>
+                                    <label for="website" class="col-sm-2 control-label">Does your vehicle have (choose all that apply): </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="option3"> Refrigeration
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="option3"> Freezer
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="option3"> Coolers
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="option3"> Thermal Blankets
+                                    </label>								
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-6">
+                                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                <button type="reset" class="btn btn-default">Clear</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-default navbar-static-bottom" style="background-color: #242b38; padding: 20px;">
+            <div class="container">
+                <div class="col-md-6">
+                    <a href="http://www.facebook.com/pages/Urban-Harvester/146450618757212?cropsuccess&amp;success=1">Click here to go Urban Harvester Facebook page.</a>
+                    <p>Help us spread the world</p>
+                    Please "Like" the<a href="http://www.facebook.com/pages/Urban-Harvester/146450618757212?cropsuccess&amp;success=1"> Urban Harvester Facebook page</a> below:
+                </div>
+                <div class="col-md-6 pull-right">
+                    <p>Click Here to Join Our Mailing List</p>
+                    <p>To contact Urban Harvester, email Info@UrbanHarvester.org</p>
+                </div>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js" ></script>
+        <script src="/static/js/bootstrap.js"></script>
+        <script src="/static/js/bootstrap-timepicker.js"></script>
+        <script src="/static/js/urban.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+       
+    </body>
+</html>
